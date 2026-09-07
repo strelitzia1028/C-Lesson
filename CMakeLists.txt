@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.20)
 project(CLesson C)
 
-add_executable(main main.c)
+add_executable(DynamicArray DynamicArray.c)
 add_executable(AVLTree AVLTree.c)
 add_executable(pointer pointer.c)
 add_executable(TwoSum TwoSum.c)
+add_executable(FuncPointer1 FuncPointer1.c)
+add_executable(FuncPointer2 FuncPointer2.c)
+add_executable(IndefiniteDocument IndefiniteDocument.c)
