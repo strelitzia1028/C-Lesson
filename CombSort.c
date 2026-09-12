@@ -8,7 +8,7 @@ int main(void)
     int arr[100];
     int counter = 0;
 
-    printf("è¯·è¾“å…¥æ•°å­—ï¼ˆè¾“å…¥ -1 ç»“æŸï¼‰: ");
+    printf("ÇëÊäÈëÊı×Ö£¨ÊäÈë -1 ½áÊø£©: ");
     fflush(stdout);
     scanf("%d", &input);
     while (input != -1)
@@ -18,7 +18,7 @@ int main(void)
         counter++;
     }
 
-    printf("åŸå§‹æ•°ç»„ï¼š");
+    printf("Ô­Ê¼Êı×é£º");
     for (int i = 0; i < counter; i++)
     {
         printf("%d ", arr[i]);
@@ -27,7 +27,7 @@ int main(void)
 
     comb_sort(arr, counter);
 
-    printf("æ’åºåæ•°ç»„ï¼š");
+    printf("ÅÅĞòºóÊı×é£º");
     for (int i = 0; i < counter; i++)
     {
         printf("%d ", arr[i]);
@@ -43,14 +43,14 @@ void comb_sort(int arr[], int len)
 
     do
     {
-        // gapä¸æ–­ç¼©å°
+        // gap²»¶ÏËõĞ¡
         gap = (int)(gap / 1.3);
-        if (gap < 1) gap = 1; // æœ€å°gapä¸º1
-        printf("å½“å‰çš„ gap æ˜¯ï¼š%d\n", gap);
+        if (gap < 1) gap = 1; // ×îĞ¡gapÎª1
+        printf("µ±Ç°µÄ gap ÊÇ£º%d\n", gap);
 
-        // ä¹Ÿå¯ä»¥ä» 1 å¼€å§‹è®¡æ•°
-        // ä½†æ˜¯éœ€è¦æŠŠ i + gap < len æ”¹ä¸º i + gap <= len
-        // å¹¶ä¸”éœ€è¦æŠŠ arr[i + gap] æ”¹ä¸º arr[i + gap - 1]
+        // Ò²¿ÉÒÔ´Ó 1 ¿ªÊ¼¼ÆÊı
+        // µ«ÊÇĞèÒª°Ñ i + gap < len ¸ÄÎª i + gap <= len
+        // ²¢ÇÒĞèÒª°Ñ arr[i + gap] ¸ÄÎª arr[i + gap - 1]
         for (int i = 0; i + gap < len; i++)
         {
             if (arr[i] > arr[i + gap])
@@ -60,6 +60,5 @@ void comb_sort(int arr[], int len)
                 arr[i + gap] = temp;
             }
         }
-    }
-    while (gap > 1);
+    } while (gap > 1);
 }
