@@ -23,8 +23,10 @@ int main(void)
     int number;
     List list;
     list.head = NULL;
+
     printf("请连续输入整数（输入 -1 结束）：");
     fflush(stdout);
+
     do
     {
         scanf("%d", &number);
@@ -33,9 +35,13 @@ int main(void)
             add(&list, number);
         }
     } while (number != -1);
+
     print(&list);
     insert(&list, 5, 2);
+
+    print(&list);
     find(&list, 5); // 这里还是有 bug，如果有重复值，只能查询到第一个出现的
+
     return 0;
 }
 
@@ -46,6 +52,7 @@ void add(List* pList, int number)
     p->value = number;
     p->next = NULL;
     Node* last = pList->head;
+
     if (last)
     {
         while (last->next)
@@ -72,10 +79,12 @@ void add(List* pList, int number)
 void print(List* pList)
 {
     Node* p;
+
     for (p = pList->head; p; p = p->next)
     {
         printf("%d ", p->value);
     }
+
     printf("\n");
 }
 
@@ -94,6 +103,7 @@ void insert(List* pList, int number, int position)
     }
 
     Node* current = pList->head;
+
     for (int i = 0; i < position - 1 && current != NULL; i++)
     {
         current = current->next;
@@ -111,6 +121,7 @@ void find(List* pList, int number)
 {
     Node* current = pList->head;
     int position = 0;
+
     while (current != NULL)
     {
         if (current->value == number)
@@ -121,5 +132,6 @@ void find(List* pList, int number)
         current = current->next;
         position++;
     }
+
     printf("%d not found in the list\n", number);
 }
