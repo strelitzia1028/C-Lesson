@@ -17,3 +17,4 @@ add_executable(LineFollowingCar LanQiao/LineFollowingCar.c)
 
 add_executable(TwoSum LeetCode/TwoSum.c)
 add_executable(SumList LeetCode/SumList.c)
+add_executable(List List.c)
